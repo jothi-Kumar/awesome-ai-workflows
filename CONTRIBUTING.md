@@ -118,3 +118,21 @@ Contributors remain responsible for reviewing their submissions, validating gene
 ## License
 
 By contributing, you agree that your contribution may be distributed under the repository's MIT License.
+
+
+## Workflow quality checklist
+Before submitting a workflow, confirm:
+- It solves a concrete, reusable task.
+- Inputs, outputs, and validation steps are explicit.
+- It does not require a specific model vendor unless the workflow is placed in a vendor-specific section.
+- It tells the agent not to fabricate evidence.
+- It handles untrusted input safely.
+- The example is small enough for a contributor to understand and test.
+- The filename and category are descriptive.
+
+## Contribution path
+1. Open an issue for substantial new workflow families.
+2. Add the workflow and, when practical, an evaluation case.
+3. Run `python tools/validate_workflows.py`.
+4. Run relevant tests.
+5. Open a pull request explaining the use case and validation performed.

@@ -216,3 +216,16 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE).
 ## Maintainer note
 
 This project is intended as a community resource. It does not promise that AI output is correct, complete, safe, or suitable for every situation.
+
+
+## Repository scale
+The repository is intentionally growing as a reusable engineering library:
+- **40 workflows** across software development, research, data analysis, documentation, project management, productivity, security, and coding-agent work.
+- **11 specialized agents** for common engineering and research roles.
+- Automated structural validation via `python tools/validate_workflows.py`.
+- Evaluation cases under `evals/`.
+- Defensive security workflows under `workflows/security/`.
+- Coding-agent guidance under `docs/codex.md`.
+- Python examples and tests under `examples/python/`.
+
+Counts are maintained manually and should be updated when the catalog changes.

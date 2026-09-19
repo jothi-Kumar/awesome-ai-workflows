@@ -33,3 +33,18 @@
 
 - `meeting-to-actions.md` — extract actions and decisions
 - `decision-record.md` — document decisions and consequences
+
+
+## Security
+- Threat modeling
+- Secret leak review
+- Dependency risk review
+- Secure code review
+- Prompt injection review
+
+## Coding agents
+- Repository onboarding
+- Issue-to-PR
+- Test-and-fix
+- Safe refactor
+- Release check
