@@ -1,229 +1,218 @@
 # Awesome AI Workflows 🤖
 
-> A practical, open-source collection of reusable AI workflows, prompts, agent instructions, templates, and engineering patterns for real-world work.
+> Practical, reusable AI workflows, agent instructions, prompts, templates, and engineering patterns for real-world work.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## Why this project?
 
-AI assistants are becoming powerful enough to help with software development, research, documentation, analysis, project management, and many other types of work.
+AI assistants are useful across software development, research, documentation, analysis, project management, and many other tasks. The challenge is getting **repeatable, verifiable results** instead of relying on one-off prompts.
 
-However, getting consistently useful results is often less about writing a single "perfect prompt" and more about having a well-structured workflow.
+**Awesome AI Workflows** turns common tasks into structured workflows.
 
-This repository collects practical, reusable workflows that can be adapted to different AI assistants and development environments.
+The repository is designed to be:
 
-The goal is simple:
+- **Reusable** — workflows can be copied and adapted.
+- **AI-readable** — files have predictable names and focused responsibilities.
+- **Evidence-aware** — facts, assumptions, hypotheses, and conclusions are separated.
+- **Verification-first** — generated work should be checked before it is trusted.
+- **Platform-neutral** — compatible with ChatGPT, Codex, GitHub Copilot, Claude, Gemini, local models, and other assistants.
+- **Human-in-the-loop** — AI assists; people review consequential decisions.
 
-**Turn common real-world tasks into repeatable AI-assisted workflows.**
+## What is included?
 
----
+### Workflows
 
-## What you'll find here
+| Area | Examples |
+|---|---|
+| Software engineering | Codebase investigation, debugging, refactoring, testing, code review |
+| Research | Research planning, source evaluation, evidence synthesis |
+| Data | Dataset profiling, anomaly investigation, analysis review |
+| Documentation | README generation, architecture docs, release notes |
+| Project work | Requirements, technical design, implementation planning |
+| Productivity | Meeting-to-actions, decision records, task decomposition |
 
-### 🧑‍💻 Software Development
+### Agents
 
-Reusable workflows for:
+Reusable instruction files for:
 
-* Understanding an unfamiliar codebase
-* Debugging difficult issues
-* Refactoring legacy code
-* Writing unit tests
-* Performing code reviews
-* Generating technical documentation
-* Designing APIs
-* Reviewing pull requests
-* Investigating production issues
-* Planning implementation work
+- Code Reviewer
+- Debugging Investigator
+- Documentation Agent
+- Research Agent
+- Project Planner
+- Test Engineer
 
-### 🔬 Research
+### Templates
 
-Workflows for:
+- Technical design
+- Research brief
+- Decision record
+- Bug report
+- Feature request
+- Pull request
+- AI task specification
 
-* Breaking down complex research questions
-* Finding and evaluating sources
-* Comparing competing explanations
-* Extracting evidence
-* Identifying uncertainty
-* Creating literature-review structures
-* Producing research summaries
+## Quick start
 
-### 📊 Data Analysis
+Choose a workflow from `workflows/`, copy it into your AI tool, and provide the requested context.
 
-Workflows for:
-
-* Exploring datasets
-* Data-quality checks
-* Statistical analysis planning
-* Generating visualizations
-* Finding anomalies
-* Explaining analytical results
-* Reviewing analytical assumptions
-
-### 📝 Documentation
-
-Templates and workflows for:
-
-* README files
-* Architecture documentation
-* Technical specifications
-* API documentation
-* Release notes
-* Incident reports
-* Project proposals
-
-### 🤖 AI Agents
-
-Reusable instructions for specialized AI roles such as:
-
-* Code Reviewer
-* Debugging Assistant
-* Research Assistant
-* Documentation Agent
-* Test Engineer
-* Architecture Reviewer
-* Project Planner
-
----
-
-## Quick Start
-
-You don't need a specific AI platform to use this repository.
-
-Choose a workflow, copy the instructions, provide your project context, and adapt the output to your environment.
-
-For example:
+A reliable default loop is:
 
 ```text
-1. Select a workflow
-2. Provide the required context
-3. Ask the AI to identify assumptions
-4. Ask it to produce a proposed solution
-5. Review the result
-6. Run tests or validate the output
-7. Iterate
+Context
+  ↓
+Understand
+  ↓
+Inspect evidence
+  ↓
+Form hypotheses
+  ↓
+Validate
+  ↓
+Propose
+  ↓
+Implement
+  ↓
+Test
+  ↓
+Review
 ```
 
----
+Do not skip validation simply because an AI system produced a confident answer.
 
-## Example: Codebase Investigation
-
-A useful AI coding workflow should not immediately ask an AI assistant to modify code.
-
-Instead:
+## Repository map
 
 ```text
-Understand → Map → Identify → Hypothesize → Validate → Change → Test
+awesome-ai-workflows/
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+├── CHANGELOG.md
+├── workflows/
+│   ├── software-development/
+│   ├── research/
+│   ├── data-analysis/
+│   ├── documentation/
+│   ├── project-management/
+│   └── productivity/
+├── agents/
+├── templates/
+├── examples/
+│   ├── python/
+│   └── markdown/
+├── docs/
+└── .github/
+    ├── ISSUE_TEMPLATE/
+    └── pull_request_template.md
 ```
 
-### Step 1 — Understand
+## Workflow format
 
-Ask the assistant to identify:
+Every workflow follows the same structure:
 
-* Project structure
-* Main components
-* Entry points
-* Dependencies
-* Configuration
-* Important data flows
+1. **Goal**
+2. **When to use**
+3. **Required context**
+4. **Instructions**
+5. **Expected output**
+6. **Validation checklist**
+7. **Common failure modes**
 
-### Step 2 — Map
+This makes workflows easier for both humans and AI systems to discover and apply.
 
-Create a concise architecture map showing how the important components interact.
+## AI usage principles
 
-### Step 3 — Identify
+### Context before generation
 
-Define:
+Give the assistant the relevant files, constraints, existing behavior, and expected outcome before requesting changes.
 
-* The observed problem
-* Relevant files
-* Relevant functions
-* Existing behavior
-* Constraints
+### Evidence before assumptions
 
-### Step 4 — Hypothesize
+Separate:
 
-Generate possible causes and explain the evidence supporting each hypothesis.
+- Facts
+- Observations
+- Assumptions
+- Hypotheses
+- Conclusions
 
-### Step 5 — Validate
+### Minimal change
 
-Inspect the relevant implementation and tests before changing anything.
+Prefer the smallest change that solves the stated problem while preserving existing behavior.
 
-### Step 6 — Change
+### Verification is mandatory
 
-Make the smallest appropriate change.
+For code, run tests and static checks where available. For research, verify important claims against sources. For documentation, compare generated content against the actual system.
 
-### Step 7 — Test
+### State uncertainty
 
-Run relevant tests and verify that existing behavior has not been unintentionally changed.
+If information is missing, the assistant should say what is missing instead of silently inventing it.
 
----
+### Human review
 
-## Design Principles
+AI-generated output should receive appropriate human review, especially for security, legal, financial, medical, production, or other consequential decisions.
 
-This project follows several principles.
+## Using this repository with ChatGPT and other coding assistants
 
-### 1. Context before generation
+The repository is intentionally structured as ordinary Markdown, source code, and configuration files so supported AI tools can inspect it easily.
 
-AI systems generally perform better when they receive relevant context rather than being asked to immediately generate an answer.
+For ChatGPT, GitHub-connected experiences can retrieve permitted repository content on demand, including code, README files, and documentation. Availability varies by plan and product surface. See the official OpenAI documentation for current connection details.
 
-### 2. Evidence before assumptions
+The repository does **not** require a specific AI provider.
 
-When investigating a problem, distinguish between:
+## First working examples
 
-* Facts
-* Observations
-* Assumptions
-* Hypotheses
-* Conclusions
+### Python
 
-### 3. Small changes are easier to validate
+See:
 
-Prefer focused changes over unnecessary rewrites.
+- `examples/python/ai_workflow_runner.py`
+- `examples/python/sample_project.py`
+- `examples/python/test_sample_project.py`
 
-### 4. Verification is part of the workflow
+Run:
 
-Generated code, analysis, documentation and recommendations should be reviewed and validated.
+```bash
+python examples/python/ai_workflow_runner.py
+python -m unittest examples/python/test_sample_project.py
+```
 
-### 5. Reusable beats clever
+### Markdown
 
-A workflow should be understandable and adaptable by someone encountering it for the first time.
+See:
 
-### 6. Human judgment remains important
-
-AI should assist with reasoning and execution, not replace appropriate human review or domain expertise.
-
----
-
-## Repository Goals
-
-This project aims to become a practical reference for people who want to use AI effectively without turning every task into trial-and-error prompting.
-
-We welcome contributions that:
-
-* Solve common real-world problems
-* Improve existing workflows
-* Add useful templates
-* Document practical techniques
-* Include reproducible examples
-* Improve clarity and accessibility
-
----
+- `examples/markdown/codebase-investigation-example.md`
+- `templates/technical-design.md`
 
 ## Contributing
 
-Before contributing, please read [CONTRIBUTING.md](CONTRIBUTING.md).
+Contributions are welcome.
+
+Before contributing, read [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Good contributions are:
 
-* Practical
-* Reusable
-* Clearly documented
-* Easy to understand
-* Tested where applicable
-* Honest about limitations
+- Practical
+- Reusable
+- Clearly documented
+- Honest about limitations
+- Easy to validate
+- Independent of a single vendor where possible
 
----
+## Security
+
+See [SECURITY.md](SECURITY.md).
+
+Never commit API keys, credentials, private customer data, production secrets, or sensitive information.
 
 ## License
 
-This project is released under the MIT License.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
-See [LICENSE](LICENSE) for details.
+## Maintainer note
+
+This project is intended as a community resource. It does not promise that AI output is correct, complete, safe, or suitable for every situation.
